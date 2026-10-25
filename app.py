@@ -36,7 +36,7 @@ def main():
         [data-testid="stSidebar"] {border-right:1px solid #DBE0D6;}
         [data-testid="stSidebar"] .notebook-brand {display:flex;align-items:center;gap:.55rem;
             font-size:1.4rem!important;font-weight:650;line-height:1.25;margin:0 0 .4rem;padding:0;}
-        .notebook-icon {font-size:1.9rem;line-height:1;flex-shrink:0;}
+        .notebook-icon {font-size:1cap;line-height:1;flex-shrink:0;}
         [data-testid="stVerticalBlockBorderWrapper"] {border-radius:14px;}
         div.stButton>button,div.stDownloadButton>button {border-radius:8px;}
         @media(max-width:760px) {
