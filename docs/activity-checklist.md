@@ -15,6 +15,6 @@ Source: the supplied two-page Streamlit Autobiography and Portfolio activity. Th
 | Text input, text area, radio/multiselect | Search, form, navigation, tools filter | Implemented |
 | Sidebar and columns | Navigation and section layouts | Implemented |
 | Four or more extras | Image, tabs, metrics, form, session state, download, theme, expanders | Implemented |
-| Public Community Cloud link for Option B | Repository files and deployment instructions prepared | Not deployed |
+| Public Community Cloud link for Option B | Public GitHub repo `djamespi/streamlit-autobiography-portfolio`, branch `main`, entrypoint `app.py` | Awaiting Community Cloud sign-in; not deployed |
 
 The source activity says the writing and projects must be the student's own. Autobiographical facts and ratings come from Dexter. Project entries describe his public repositories; roles reflect ownership and contribution metadata, with supplied coursework code distinguished from modifications. `check_content.py` reports content gaps before submission.

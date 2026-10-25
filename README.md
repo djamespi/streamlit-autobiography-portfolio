@@ -2,6 +2,8 @@
 
 A Streamlit app for Dexter James D. Benitez, a third-year BS Computer Science student at CIT-University, section F1. The autobiography and milestones use Dexter's supplied writing. His self-ratings are Backend Development 4/5, Quality Assurance / Testing 3/5, and AI Development 3/5. The portfolio features TeknoCare, Habitually, and his CS345 backpropagation activity, using verified public repository sources.
 
+Repository: https://github.com/djamespi/streamlit-autobiography-portfolio
+
 ## Run locally
 
 Use Python 3.12. From this directory on Windows:
@@ -39,9 +41,9 @@ This check verifies field coverage, not authorship or factual accuracy.
 
 ## Deploy to Streamlit Community Cloud
 
-1. Finish the personal content and confirm at least three real projects.
-2. Push `app.py`, `portfolio.py`, `data/`, `assets/`, `requirements.txt`, and `.streamlit/config.toml` to your public GitHub repository. These files must be present together; `app.py` alone is insufficient. Do not upload virtual environments or secrets.
-3. Sign in at https://share.streamlit.io and select **Create app**. Choose your GitHub repository, its actual branch, and `app.py` as the main file.
+1. Review the autobiography, skill ratings, and three linked projects.
+2. The app files are published at `djamespi/streamlit-autobiography-portfolio`. Future updates must include `app.py`, `portfolio.py`, `data/`, `assets/`, `requirements.txt`, and `.streamlit/config.toml` together; `app.py` alone is insufficient. Do not upload virtual environments or secrets.
+3. Sign in at https://share.streamlit.io and select **Create app**. Choose repository `djamespi/streamlit-autobiography-portfolio`, branch `main`, and `app.py` as the main file.
 4. In **Advanced settings**, select Python 3.12. This app needs no API keys or secrets.
 5. Deploy. Verify the resulting public `https://….streamlit.app` URL in a signed-out or private browser window. Open the app and test project filters and feedback submission.
 6. Copy the actual deployed URL to the assignment tab in Teams. Include your name and section in the submission comment. This project does not submit to Teams automatically.
