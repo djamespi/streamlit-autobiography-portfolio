@@ -5,7 +5,7 @@ Source: the supplied two-page Streamlit Autobiography and Portfolio activity. Th
 | Activity requirement | Implementation | Content status |
 | --- | --- | --- |
 | Name, program/year, short biography, visible section | Header, sidebar, footer | Supplied by Dexter |
-| Photo or labeled stand-in | `assets/portrait-stand-in.svg` | Implemented |
+| Photo or labeled stand-in | `assets/dexter-benitez.png` | Dexter's supplied portrait; labeled stand-in retained only as fallback |
 | Background, education, interests, milestones in own words | Story tabs | Paraphrased from Dexter's supplied autobiography |
 | Skills in text and a table/chart using own numbers | Rating scale, chart, table, evidence | Dexter's ratings: backend 4, QA 3, AI 3 |
 | Three projects, role, tools, outcome or link | Searchable project cards | CITUClinicSystem (technical), tinHealth (backend), Parola (AI); repository features verified and private-source link labeled |

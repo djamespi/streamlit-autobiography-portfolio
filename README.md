@@ -27,7 +27,7 @@ Edit `data/profile.json`. Keep autobiography wording your own. Supply:
 - Each milestone has `date`, `title`, and optionally `description`.
 - Optionally set `github_url`, `contact_email`, and `photo` (a repository-relative asset path).
 
-The default illustration is explicitly labeled as a portrait stand-in. Replace it with your own photo by adding the image to `assets/` and setting `photo` to its path.
+Dexter's supplied `solo_pic` portrait is included at `assets/dexter-benitez.png`. Its original pixels are preserved; the app controls its display size and proportions through the layout. The labeled illustration remains available only as a fallback for a missing photo.
 
 The project selection and focus areas come from Dexter. tinHealth's README explicitly credits his backend, database, and some frontend work. Feature descriptions reflect inspected repository files; no claims are made about deployment, user counts, measured accuracy, or individual ownership of every feature. Parola's source repository is private and its link is labeled as requiring access. The portfolio only describes the project and does not include its source code, data, or credentials. See `docs/project-sources.md` for evidence. No GitHub token is required at runtime.
 

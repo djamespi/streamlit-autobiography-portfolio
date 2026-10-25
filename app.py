@@ -15,20 +15,43 @@ def main():
     name = profile.get("name") or "My portfolio"
     st.set_page_config(page_title=f"{name} | Autobiography & Portfolio", page_icon="🌿", layout="wide")
     st.markdown("""<style>
-        .block-container {max-width:1180px;padding-top:3rem;padding-bottom:3rem;}
-        h1 {font-family:Georgia,serif;font-size:clamp(2.7rem,6vw,4.6rem)!important;
-            line-height:1.08!important;letter-spacing:-.045em;}
-        h2 {font-family:Georgia,serif;letter-spacing:-.025em;}
-        h3 {letter-spacing:-.02em;}
-        .eyebrow {color:#176B58;font-size:.78rem;letter-spacing:.16em;font-weight:700;margin-bottom:1.1rem;}
-        .intro {font-size:1.2rem;line-height:1.8;color:#4B6058;max-width:650px;}
-        .section-no {color:#176B58;font-size:.8rem;letter-spacing:.13em;margin-top:1.1rem;}
+        .block-container {max-width:1120px;padding:4.5rem 2rem 3rem;}
+        [data-testid="stHeading"] h1 {font-family:Georgia,serif;font-size:clamp(2rem,3.3vw,3.1rem)!important;
+            line-height:1.14!important;letter-spacing:-.035em;padding-bottom:.4rem;}
+        [data-testid="stHeading"] h2 {font-family:Georgia,serif;font-size:1.75rem!important;
+            line-height:1.25;letter-spacing:-.025em;}
+        [data-testid="stHeading"] h3 {font-size:1.18rem!important;line-height:1.4;letter-spacing:-.015em;}
+        [data-testid="stMarkdownContainer"] p {font-size:1rem;line-height:1.65;}
+        .eyebrow {color:#176B58;font-size:.74rem;letter-spacing:.14em;font-weight:700;margin:.2rem 0 .15rem;}
+        [data-testid="stMarkdownContainer"] .hero-headline {font-size:1.2rem;line-height:1.5;
+            font-weight:600;color:#176B58;margin:0 0 .3rem;}
+        [data-testid="stMarkdownContainer"] .intro {font-size:1.03rem;line-height:1.75;
+            color:#4B6058;max-width:620px;margin:.5rem 0 0;}
+        .st-key-hero_intro {gap:.55rem;}
+        .st-key-portrait {align-items:center!important;}
+        .st-key-portrait [data-testid="stFullScreenFrame"] {display:flex;justify-content:center;}
+        .st-key-portrait [data-testid="stImage"] {max-width:250px;margin-inline:auto;}
+        .st-key-portrait [data-testid="stImage"] img {aspect-ratio:4/5;object-fit:cover;
+            border-radius:16px;border:1px solid #DEE3D9;}
+        .st-key-summary {margin-top:1.25rem;}
+        .section-no {color:#176B58;font-size:.74rem;letter-spacing:.13em;margin-top:.7rem;}
         [data-testid="stSidebar"] {border-right:1px solid #DBE0D6;}
-        [data-testid="stMetricValue"] {font-family:Georgia,serif;}
+        [data-testid="stSidebar"] [data-testid="stHeading"] h3 {font-size:1.05rem!important;}
+        [data-testid="stMetricValue"] p {font-family:Georgia,serif;font-size:2rem!important;line-height:1.2;}
+        [data-testid="stMetricLabel"] p {font-size:.84rem;}
         [data-testid="stVerticalBlockBorderWrapper"] {border-radius:14px;}
-        [data-testid="stImage"] img {border-radius:18px;}
         div.stButton>button,div.stDownloadButton>button {border-radius:8px;}
-        @media(max-width:700px) {.block-container {padding-top:1.8rem;}}
+        @media(max-width:760px) {
+            .block-container {padding:4.5rem 1.1rem 2rem;}
+            [data-testid="stHeading"] h1 {font-size:2rem!important;}
+            [data-testid="stHeading"] h2 {font-size:1.5rem!important;}
+            [data-testid="stMarkdownContainer"] .hero-headline {font-size:1.08rem;}
+            .st-key-portrait [data-testid="stImage"] {max-width:190px;}
+            .st-key-summary [data-testid="stHorizontalBlock"] {flex-wrap:nowrap;gap:.6rem;}
+            .st-key-summary [data-testid="stColumn"] {min-width:0!important;flex:1 1 0!important;}
+            [data-testid="stMetricValue"] p {font-size:1.7rem!important;}
+            [data-testid="stMetricLabel"] p {font-size:.76rem;}
+        }
         </style>""", unsafe_allow_html=True)
 
     with st.sidebar:
@@ -55,29 +78,31 @@ def main():
         return view in ("Full portfolio", section)
 
     if show("About & story"):
-        intro, portrait = st.columns([2.2, 1], gap="large")
-        with intro:
-            st.markdown('<div class="eyebrow">A LITTLE ABOUT ME</div>', unsafe_allow_html=True)
-            st.title(name)
-            if profile.get("headline"):
-                st.subheader(profile["headline"])
-            identity = [str(profile.get(field, "")).strip() for field in ("program", "year")]
-            st.write(" · ".join(value for value in identity if value) or "Program and year to be added")
-            st.caption(f"Section: {profile.get('section') or 'To be added'}")
-            bio = profile.get("short_bio") or "My personal introduction will appear here."
-            st.markdown(f'<p class="intro">{html.escape(bio)}</p>', unsafe_allow_html=True)
-        with portrait:
-            photo = ROOT / (profile.get("photo") or "assets/portrait-stand-in.svg")
-            if not photo.is_file():
-                photo = ROOT / "assets/portrait-stand-in.svg"
-            st.image(str(photo), width="stretch")
-            if photo.name == "portrait-stand-in.svg":
-                st.caption("Clearly labeled portrait stand-in; replace with a personal photo if desired.")
+        with st.container(key="hero"):
+            intro, portrait = st.columns([2.1, 1], gap="medium", vertical_alignment="center")
+            with intro, st.container(key="hero_intro"):
+                st.markdown('<div class="eyebrow">A LITTLE ABOUT ME</div>', unsafe_allow_html=True)
+                st.title(name)
+                if profile.get("headline"):
+                    st.markdown(f'<p class="hero-headline">{html.escape(profile["headline"])}</p>', unsafe_allow_html=True)
+                identity = [str(profile.get(field, "")).strip() for field in ("program", "year")]
+                st.write(" · ".join(value for value in identity if value) or "Program and year to be added")
+                st.caption(f"Section: {profile.get('section') or 'To be added'}")
+                bio = profile.get("short_bio") or "My personal introduction will appear here."
+                st.markdown(f'<p class="intro">{html.escape(bio)}</p>', unsafe_allow_html=True)
+            with portrait, st.container(key="portrait"):
+                photo = ROOT / (profile.get("photo") or "assets/portrait-stand-in.svg")
+                if not photo.is_file():
+                    photo = ROOT / "assets/portrait-stand-in.svg"
+                st.image(str(photo), width="stretch")
+                if photo.name == "portrait-stand-in.svg":
+                    st.caption("Clearly labeled portrait stand-in; replace with a personal photo if desired.")
 
-        first, second, third = st.columns(3)
-        first.metric("Projects in my portfolio", len(profile.get("projects", [])))
-        second.metric("Skills I’m developing", len(profile.get("skills", [])))
-        third.metric("Milestones in my story", len(profile.get("autobiography", {}).get("milestones", [])))
+        with st.container(key="summary"):
+            first, second, third = st.columns(3)
+            first.metric("Projects", len(profile.get("projects", [])))
+            second.metric("Skills", len(profile.get("skills", [])))
+            third.metric("Milestones", len(profile.get("autobiography", {}).get("milestones", [])))
         st.divider()
         section_heading("01", "My story", "The experiences and interests behind my work.")
         story = profile.get("autobiography", {})
@@ -96,7 +121,8 @@ def main():
                 detail.write(milestone.get("description", ""))
 
     if show("Skills"):
-        st.divider()
+        if view == "Full portfolio":
+            st.divider()
         section_heading("02", "What I’m learning", "My own skill ratings, on a scale of 1 to 5.")
         st.caption("1: getting started · 2: basic practice · 3: comfortable with guidance · 4: independent · 5: advanced")
         controls, chart_column = st.columns([1, 2], gap="large")
@@ -135,7 +161,8 @@ def main():
                          hide_index=True, width="stretch")
 
     if show("Projects"):
-        st.divider()
+        if view == "Full portfolio":
+            st.divider()
         section_heading("03", "Selected projects", "A closer look at the things I’ve worked on.")
         projects = profile.get("projects", [])
         search_col, tools_col, order_col = st.columns([1.5, 1.5, 1])
@@ -154,11 +181,10 @@ def main():
             st.info("No projects match. Clear the search or reset the filters to see all projects.")
         for number, project in enumerate(selected, 1):
             with st.container(border=True):
-                detail, metadata = st.columns([2.4, 1], gap="large")
+                detail, metadata = st.columns([1.8, 1], gap="medium")
                 with detail:
-                    st.caption(f"PROJECT {number:02d}")
-                    if project.get("category"):
-                        st.caption(project["category"])
+                    label = f"PROJECT {number:02d}"
+                    st.caption(f"{label} · {project['category']}" if project.get("category") else label)
                     st.subheader(project["title"])
                     if project.get("description"):
                         st.write(project["description"])
@@ -180,7 +206,8 @@ def main():
                         st.write(project["reflection"])
 
     if show("Contact"):
-        st.divider()
+        if view == "Full portfolio":
+            st.divider()
         section_heading("04", "Leave a note", "Questions, ideas, or feedback on my work are welcome.")
         form_column, note_column = st.columns([1.8, 1], gap="large")
         with note_column:
