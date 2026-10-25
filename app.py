@@ -33,12 +33,9 @@ def main():
         .st-key-portrait [data-testid="stImage"] {max-width:250px;margin-inline:auto;}
         .st-key-portrait [data-testid="stImage"] img {aspect-ratio:4/5;object-fit:cover;
             border-radius:16px;border:1px solid #DEE3D9;}
-        .st-key-summary {margin-top:1.25rem;}
         .section-no {color:#176B58;font-size:.74rem;letter-spacing:.13em;margin-top:.7rem;}
         [data-testid="stSidebar"] {border-right:1px solid #DBE0D6;}
         [data-testid="stSidebar"] [data-testid="stHeading"] h3 {font-size:1.05rem!important;}
-        [data-testid="stMetricValue"] p {font-family:Georgia,serif;font-size:2rem!important;line-height:1.2;}
-        [data-testid="stMetricLabel"] p {font-size:.84rem;}
         [data-testid="stVerticalBlockBorderWrapper"] {border-radius:14px;}
         div.stButton>button,div.stDownloadButton>button {border-radius:8px;}
         @media(max-width:760px) {
@@ -47,10 +44,6 @@ def main():
             [data-testid="stHeading"] h2 {font-size:1.5rem!important;}
             [data-testid="stMarkdownContainer"] .hero-headline {font-size:1.08rem;}
             .st-key-portrait [data-testid="stImage"] {max-width:190px;}
-            .st-key-summary [data-testid="stHorizontalBlock"] {flex-wrap:nowrap;gap:.6rem;}
-            .st-key-summary [data-testid="stColumn"] {min-width:0!important;flex:1 1 0!important;}
-            [data-testid="stMetricValue"] p {font-size:1.7rem!important;}
-            [data-testid="stMetricLabel"] p {font-size:.76rem;}
         }
         </style>""", unsafe_allow_html=True)
 
@@ -98,11 +91,6 @@ def main():
                 if photo.name == "portrait-stand-in.svg":
                     st.caption("Clearly labeled portrait stand-in; replace with a personal photo if desired.")
 
-        with st.container(key="summary"):
-            first, second, third = st.columns(3)
-            first.metric("Projects", len(profile.get("projects", [])))
-            second.metric("Skills", len(profile.get("skills", [])))
-            third.metric("Milestones", len(profile.get("autobiography", {}).get("milestones", [])))
         st.divider()
         section_heading("01", "My story", "The experiences and interests behind my work.")
         story = profile.get("autobiography", {})
