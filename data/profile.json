@@ -1,0 +1,64 @@
+{
+  "name": "Dexter James D. Benitez",
+  "program": "Bachelor of Science in Computer Science",
+  "year": "3rd year",
+  "section": "F1",
+  "headline": "Computer Science student & aspiring AI Engineer",
+  "short_bio": "I’m Dexter, a 21-year-old Computer Science student at CIT-University. I enjoy building useful projects and exploring how AI can help people. My goal is to become an AI Engineer.",
+  "photo": "",
+  "github_url": "https://github.com/djamespi",
+  "contact_email": "",
+  "autobiography": {
+    "background": "I am 21 years old and currently live in Tisa, Cebu. My hometown is Hinatuan, Surigao del Sur. I chose Computer Science because I enjoy innovation and building things that can be useful to other people and to me. My brother, who also studied Computer Science, helped inspire my decision by sharing the career opportunities in the field.",
+    "education": "I am a third-year Bachelor of Science in Computer Science student at CIT-University, in section F1. My studies have challenged me to keep improving, especially in demanding subjects such as DAA and DSA. Passing those subjects has been a meaningful achievement for me. As I continue learning and building projects, I am working toward my goal of becoming an AI Engineer.",
+    "interests": "Outside my studies, I enjoy gaming, especially Mobile Legends, and listening to music. I also like working out at the gym and staying fit. In my spare time, I enjoy making fun side projects and trying out ideas that I find useful or interesting.",
+    "milestones": [
+      {
+        "date": "Recent",
+        "title": "Top 5 finalist at a DOST AI Hackathon",
+        "description": "My team and I recently secured a place among the top five finalists at an AI Hackathon in Iloilo City organized by DOST."
+      },
+      {
+        "date": "Coursework",
+        "title": "Passed DAA and DSA",
+        "description": "Passing challenging Computer Science subjects, including DAA and DSA, has been an important milestone in my college journey."
+      },
+      {
+        "date": "Recognition",
+        "title": "Consistent Parangal Awards achiever",
+        "description": "I have been a consistent achiever in the Parangal Awards, an accomplishment that reflects my continued effort in my studies."
+      }
+    ]
+  },
+  "skills": [
+    {"name": "Backend Development", "rating": 4, "evidence": "One of my main technical focus areas."},
+    {"name": "Quality Assurance / Testing", "rating": 3, "evidence": "An area of technical work I focus on."},
+    {"name": "AI Development", "rating": 3, "evidence": "A focus area connected to my goal of becoming an AI Engineer."}
+  ],
+  "projects": [
+    {
+      "title": "TeknoCare",
+      "description": "A Django web application with account registration, user profiles, and a SQL JOIN demonstration using clinic-related data.",
+      "role": "Repository owner and code contributor",
+      "tools": ["Python", "Django", "PostgreSQL", "SQL", "HTML", "CSS"],
+      "outcome": "The repository includes registration flows, profile models, and parameterized INNER JOIN and LEFT JOIN examples with checks for the expected results.",
+      "url": "https://github.com/djamespi/TeknoCare"
+    },
+    {
+      "title": "Habitually",
+      "description": "A habit-tracking application for recording daily completions and following current and longest streaks.",
+      "role": "Repository owner and code contributor",
+      "tools": ["C#", "Blazor WebAssembly", ".NET", "Tailwind CSS"],
+      "outcome": "The source supports adding, editing, and deleting habits, toggling daily completions, and calculating streaks. It currently uses in-memory data that resets on reload.",
+      "url": "https://github.com/djamespi/Habitually"
+    },
+    {
+      "title": "Neural Network Backpropagation — CS345",
+      "description": "An AI coursework activity that extends a supplied C# backpropagation program with cross-entropy loss and weight decay.",
+      "role": "Coursework contributor; repository includes the original and modified programs",
+      "tools": ["C#", "Neural Networks", "Backpropagation", "Cross-Entropy", "L2 Regularization"],
+      "outcome": "The modified program adds a loss-function switch and L2 weight decay, trains on generated data, and reports training and test accuracy. The repository links to both versions for comparison.",
+      "url": "https://github.com/djamespi/CS345---BackProp-Activity"
+    }
+  ]
+}
