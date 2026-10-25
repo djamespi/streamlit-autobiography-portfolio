@@ -1,6 +1,6 @@
 # Autobiography & Portfolio
 
-A Streamlit app for Dexter James D. Benitez, a third-year BS Computer Science student at CIT-University, section F1. The autobiography and milestones use Dexter's supplied writing. His self-ratings are Backend Development 4/5, Quality Assurance / Testing 3/5, and AI Development 3/5. The portfolio features TeknoCare, Habitually, and his CS345 backpropagation activity, using verified public repository sources.
+A Streamlit app for Dexter James D. Benitez, a third-year BS Computer Science student at CIT-University, section F1. The autobiography and milestones use Dexter's supplied writing. His self-ratings are Backend Development 4/5, Quality Assurance / Testing 3/5, and AI Development 3/5. The portfolio features CITUClinicSystem for technical work, tinHealth for backend development, and Parola for AI development.
 
 Repository: https://github.com/djamespi/streamlit-autobiography-portfolio
 
@@ -29,7 +29,7 @@ Edit `data/profile.json`. Keep autobiography wording your own. Supply:
 
 The default illustration is explicitly labeled as a portrait stand-in. Replace it with your own photo by adding the image to `assets/` and setting `photo` to its path.
 
-The project roles use the verified repository ownership and contributor metadata. The backpropagation entry identifies the supplied original and the coursework modification. Feature descriptions reflect inspected source files; no claims are made about deployment, user counts, measured accuracy, or individual ownership of every feature. See `docs/project-sources.md` for evidence. No GitHub token is required at runtime.
+The project selection and focus areas come from Dexter. tinHealth's README explicitly credits his backend, database, and some frontend work. Feature descriptions reflect inspected repository files; no claims are made about deployment, user counts, measured accuracy, or individual ownership of every feature. Parola's source repository is private and its link is labeled as requiring access. The portfolio only describes the project and does not include its source code, data, or credentials. See `docs/project-sources.md` for evidence. No GitHub token is required at runtime.
 
 Check completeness:
 

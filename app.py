@@ -157,6 +157,8 @@ def main():
                 detail, metadata = st.columns([2.4, 1], gap="large")
                 with detail:
                     st.caption(f"PROJECT {number:02d}")
+                    if project.get("category"):
+                        st.caption(project["category"])
                     st.subheader(project["title"])
                     if project.get("description"):
                         st.write(project["description"])
@@ -169,7 +171,10 @@ def main():
                     st.write(", ".join(project.get("tools", [])))
                     link = safe_url(project.get("url"))
                     if link:
-                        st.link_button("View project ↗", link, width="stretch")
+                        st.link_button("View source (access required) ↗" if project.get("repository_private")
+                                       else "View project ↗", link, width="stretch")
+                        if project.get("repository_private"):
+                            st.caption("Private team repository; source access is required.")
                 if project.get("reflection"):
                     with st.expander("What I learned"):
                         st.write(project["reflection"])

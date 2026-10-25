@@ -31,34 +31,38 @@
     ]
   },
   "skills": [
-    {"name": "Backend Development", "rating": 4, "evidence": "One of my main technical focus areas."},
+    {"name": "Backend Development", "rating": 4, "evidence": "Backend and database operations in tinHealth."},
     {"name": "Quality Assurance / Testing", "rating": 3, "evidence": "An area of technical work I focus on."},
-    {"name": "AI Development", "rating": 3, "evidence": "A focus area connected to my goal of becoming an AI Engineer."}
+    {"name": "AI Development", "rating": 3, "evidence": "AI development work on the Parola team project."}
   ],
   "projects": [
     {
-      "title": "TeknoCare",
-      "description": "A Django web application with account registration, user profiles, and a SQL JOIN demonstration using clinic-related data.",
-      "role": "Repository owner and code contributor",
-      "tools": ["Python", "Django", "PostgreSQL", "SQL", "HTML", "CSS"],
-      "outcome": "The repository includes registration flows, profile models, and parameterized INNER JOIN and LEFT JOIN examples with checks for the expected results.",
-      "url": "https://github.com/djamespi/TeknoCare"
+      "title": "CITUClinicSystem",
+      "category": "Technical",
+      "description": "A university clinic management system with separate student, provider, and administrator workflows.",
+      "role": "Technical contributor (team project)",
+      "tools": ["PHP", "SQL", "HTML", "CSS", "JavaScript", "FPDF"],
+      "outcome": "The source includes appointment management, provider schedules, patient medical records, support tickets, audit logs, and PDF medical-history export.",
+      "url": "https://github.com/djamespi/CITUClinicSystem"
     },
     {
-      "title": "Habitually",
-      "description": "A habit-tracking application for recording daily completions and following current and longest streaks.",
-      "role": "Repository owner and code contributor",
-      "tools": ["C#", "Blazor WebAssembly", ".NET", "Tailwind CSS"],
-      "outcome": "The source supports adding, editing, and deleting habits, toggling daily completions, and calculating streaks. It currently uses in-memory data that resets on reload.",
-      "url": "https://github.com/djamespi/Habitually"
+      "title": "tinHealth",
+      "category": "Backend Development",
+      "description": "A Java/JavaFX desktop health tracker for daily meals, physical activities, and reminders to move during computer use.",
+      "role": "Backend development, database operations, and some frontend work (team project)",
+      "tools": ["Java", "JavaFX", "MySQL", "JDBC", "Maven"],
+      "outcome": "The team application includes meal and activity logging, nutritional data integration, user preferences, and a repository/data-source layer for database operations. Its README credits my backend and database contributions.",
+      "url": "https://github.com/Gianne818/tinHealth"
     },
     {
-      "title": "Neural Network Backpropagation — CS345",
-      "description": "An AI coursework activity that extends a supplied C# backpropagation program with cross-entropy loss and weight decay.",
-      "role": "Coursework contributor; repository includes the original and modified programs",
-      "tools": ["C#", "Neural Networks", "Backpropagation", "Cross-Entropy", "L2 Regularization"],
-      "outcome": "The modified program adds a loss-function switch and L2 weight decay, trains on generated data, and reports training and test accuracy. The repository links to both versions for comparison.",
-      "url": "https://github.com/djamespi/CS345---BackProp-Activity"
+      "title": "Parola",
+      "category": "AI Development",
+      "description": "A team AI project for municipal fisherfolk that combines ocean and fisheries data to identify potential fishing zones and support advisories through a web portal and SMS.",
+      "role": "AI development contributor (team project)",
+      "tools": ["Python", "LightGBM", "scikit-learn", "pandas", "NumPy", "FastAPI", "Next.js", "Supabase"],
+      "outcome": "The repository contains pelagic and demersal LightGBM notebooks, ocean-data processing, habitat-suitability calculations, mapping, and SMS-advisory integration.",
+      "url": "https://github.com/Gianne818/AIHackathon2026_StarISDA_Parola",
+      "repository_private": true
     }
   ]
 }

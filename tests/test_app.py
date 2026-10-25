@@ -92,3 +92,16 @@ def test_content_check_and_download_cover_required_fields(profile):
     assert all(title in markdown for title in ("Alpha", "Beta", "Gamma"))
     assert "Python: 4/5" in markdown
     assert "TEST" in markdown
+
+
+def test_private_project_link_explains_access_requirement(profile):
+    profile["projects"][0].update(category="AI Development", repository_private=True)
+    with patch("portfolio.load_profile", return_value=profile):
+        app = AppTest.from_file(ROOT / "app.py", default_timeout=30).run()
+        app.radio(key="view").set_value("Projects").run()
+        assert not app.exception
+        assert any("Private team repository" in item.value for item in app.caption)
+        assert any(item.proto.label == "View source (access required) ↗" for item in app.get("link_button"))
+    markdown = portfolio_markdown(profile)
+    assert "Focus: AI Development" in markdown
+    assert "Source repository is private; access is required." in markdown

@@ -82,7 +82,10 @@ def portfolio_markdown(profile):
     lines.extend(["", "## Projects"])
     for project in profile.get("projects", []):
         lines.extend(["", f"### {project['title']}", project.get("description", ""),
+                      *([f"Focus: {project['category']}"] if project.get("category") else []),
                       f"Role: {project.get('role', '')}",
                       "Tools: " + ", ".join(project.get("tools", [])),
                       f"Outcome: {project.get('outcome', '')}", project.get("url", "")])
+        if project.get("repository_private"):
+            lines.append("Source repository is private; access is required.")
     return "\n".join(lines).strip() + "\n"
