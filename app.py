@@ -34,7 +34,7 @@ def main():
         .st-key-portrait [data-testid="stImage"] img {aspect-ratio:4/5;object-fit:cover;
             border-radius:16px;border:1px solid #DEE3D9;}
         [data-testid="stSidebar"] {border-right:1px solid #DBE0D6;}
-        [data-testid="stSidebar"] .notebook-brand {display:flex;align-items:center;gap:.55rem;
+        [data-testid="stSidebar"] .notebook-brand {display:flex;align-items:center;gap:1rem;
             font-size:1.4rem!important;font-weight:650;line-height:1.25;margin:0 0 .4rem;padding:0;}
         .notebook-icon {font-size:1cap;line-height:1;flex-shrink:0;}
         [data-testid="stVerticalBlockBorderWrapper"] {border-radius:14px;}
