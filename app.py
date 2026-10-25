@@ -33,7 +33,6 @@ def main():
         .st-key-portrait [data-testid="stImage"] {max-width:250px;margin-inline:auto;}
         .st-key-portrait [data-testid="stImage"] img {aspect-ratio:4/5;object-fit:cover;
             border-radius:16px;border:1px solid #DEE3D9;}
-        .section-no {color:#176B58;font-size:.74rem;letter-spacing:.13em;margin-top:.7rem;}
         [data-testid="stSidebar"] {border-right:1px solid #DBE0D6;}
         [data-testid="stSidebar"] [data-testid="stHeading"] h3 {font-size:1.05rem!important;}
         [data-testid="stVerticalBlockBorderWrapper"] {border-radius:14px;}
@@ -92,7 +91,7 @@ def main():
                     st.caption("Clearly labeled portrait stand-in; replace with a personal photo if desired.")
 
         st.divider()
-        section_heading("01", "My story", "The experiences and interests behind my work.")
+        section_heading("My story", "The experiences and interests behind my work.")
         story = profile.get("autobiography", {})
         tabs = st.tabs(["Background", "Education", "Interests", "Milestones"])
         for tab, key in zip(tabs[:3], ["background", "education", "interests"]):
@@ -111,7 +110,7 @@ def main():
     if show("Skills"):
         if view == "Full portfolio":
             st.divider()
-        section_heading("02", "What I’m learning", "My own skill ratings, on a scale of 1 to 5.")
+        section_heading("What I’m learning", "My own skill ratings, on a scale of 1 to 5.")
         st.caption("1: getting started · 2: basic practice · 3: comfortable with guidance · 4: independent · 5: advanced")
         controls, chart_column = st.columns([1, 2], gap="large")
         with controls:
@@ -151,7 +150,7 @@ def main():
     if show("Projects"):
         if view == "Full portfolio":
             st.divider()
-        section_heading("03", "Selected projects", "A closer look at the things I’ve worked on.")
+        section_heading("Selected projects", "A closer look at the things I’ve worked on.")
         projects = profile.get("projects", [])
         search_col, tools_col, order_col = st.columns([1.5, 1.5, 1])
         query = search_col.text_input("Search projects", placeholder="Title, tool, or keyword", key="project_search")
@@ -167,12 +166,11 @@ def main():
             st.info("Project entries are awaiting GitHub review. Each will include my role, tools, and an outcome or link.")
         elif not selected:
             st.info("No projects match. Clear the search or reset the filters to see all projects.")
-        for number, project in enumerate(selected, 1):
+        for project in selected:
             with st.container(border=True):
                 detail, metadata = st.columns([1.8, 1], gap="medium")
                 with detail:
-                    label = f"PROJECT {number:02d}"
-                    st.caption(f"{label} · {project['category']}" if project.get("category") else label)
+                    st.caption(project.get("category") or "Project")
                     st.subheader(project["title"])
                     if project.get("description"):
                         st.write(project["description"])
@@ -196,7 +194,7 @@ def main():
     if show("Contact"):
         if view == "Full portfolio":
             st.divider()
-        section_heading("04", "Leave a note", "Questions, ideas, or feedback on my work are welcome.")
+        section_heading("Leave a note", "Questions, ideas, or feedback on my work are welcome.")
         form_column, note_column = st.columns([1.8, 1], gap="large")
         with note_column:
             st.markdown("### Thanks for stopping by.")
@@ -231,8 +229,7 @@ def main():
     st.caption(f"{name} · Section {profile.get('section') or 'to be added'} · Autobiography & Portfolio")
 
 
-def section_heading(number, title, description):
-    st.markdown(f'<div class="section-no">{number}</div>', unsafe_allow_html=True)
+def section_heading(title, description):
     st.header(title)
     st.write(description)
 
