@@ -34,7 +34,9 @@ def main():
         .st-key-portrait [data-testid="stImage"] img {aspect-ratio:4/5;object-fit:cover;
             border-radius:16px;border:1px solid #DEE3D9;}
         [data-testid="stSidebar"] {border-right:1px solid #DBE0D6;}
-        [data-testid="stSidebar"] [data-testid="stHeading"] h3 {font-size:1.05rem!important;}
+        [data-testid="stSidebar"] .notebook-brand {display:flex;align-items:center;gap:.55rem;
+            font-size:1.4rem!important;font-weight:650;line-height:1.25;margin:0 0 .4rem;padding:0;}
+        .notebook-icon {font-size:1.9rem;line-height:1;flex-shrink:0;}
         [data-testid="stVerticalBlockBorderWrapper"] {border-radius:14px;}
         div.stButton>button,div.stDownloadButton>button {border-radius:8px;}
         @media(max-width:760px) {
@@ -47,7 +49,8 @@ def main():
         </style>""", unsafe_allow_html=True)
 
     with st.sidebar:
-        st.markdown("### 🌿 Personal notebook")
+        st.markdown('<h3 class="notebook-brand"><span class="notebook-icon" aria-hidden="true">🌿</span>'
+                    '<span>Personal notebook</span></h3>', unsafe_allow_html=True)
         st.caption("AUTOBIOGRAPHY & PORTFOLIO")
         st.write(f"**{name}**")
         st.caption(f"Section: {profile.get('section') or 'Awaiting your section'}")
